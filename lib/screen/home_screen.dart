@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: kprimaryColor.withOpacity(0.8),
+      backgroundColor: kprimaryColor,
        appBar: AppBar(
         leading: IconButton(
           onPressed: (){}, 
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
          ],
          centerTitle: true,
          elevation: 0.0,
-         backgroundColor: kprimaryColor.withOpacity(0.8),
+         backgroundColor: kprimaryColor,
        ),
        body: Column(
         children:  [
@@ -52,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
               decoration: const BoxDecoration(
                 color: kAccentColor,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(15.0), 
-                  topRight: Radius.circular(15.0)
+                  topLeft: Radius.circular(30.0), 
+                  topRight: Radius.circular(30.0)
                 )
               ),
-              child: FavoriteFrinds(),
+              child: const FavoriteFrinds(),
              ),
            ),   
         ],

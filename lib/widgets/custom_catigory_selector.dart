@@ -21,8 +21,10 @@ class _CustomCatigorySelectorState extends State<CustomCatigorySelector> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: kprimaryColor,
+
       height: 100, 
-      color: kprimaryColor.withOpacity(0.8), 
+       
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: hederCatigory.length,

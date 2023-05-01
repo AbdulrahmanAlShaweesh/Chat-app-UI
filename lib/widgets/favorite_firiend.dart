@@ -14,8 +14,8 @@ class FavoriteFrinds extends StatelessWidget {
       decoration: const BoxDecoration(
         color: kAccentColor,  
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(15), 
-          topRight: Radius.circular(15.0)
+          topLeft: Radius.circular(30), 
+          topRight: Radius.circular(30.0)
         )
       ),
     );
