@@ -1,54 +1,46 @@
-// ignore_for_file: unused_import, prefer_const_constructors_in_immutables
-
-import 'package:flutter/foundation.dart';
+import 'package:chat_app_ui/constants/constants_color.dart';
 import 'package:flutter/material.dart';
-import '../constants/constants_color.dart';
 
-class CustomCatigorySelector extends StatefulWidget {
-  CustomCatigorySelector({super.key});
+class CustomCatigorySelectors extends StatefulWidget {
+  CustomCatigorySelectors({super.key});
 
   @override
-  State<CustomCatigorySelector> createState() => _CustomCatigorySelectorState();
+  State<CustomCatigorySelectors> createState() => _CustomCatigorySelectorsState();
 }
 
-class _CustomCatigorySelectorState extends State<CustomCatigorySelector> {
-  int currentIndex = 0; 
-
-  List<String> hederCatigory = [
-    "Messages", "Online", "Group", "Requests"
+class _CustomCatigorySelectorsState extends State<CustomCatigorySelectors> {
+  List<String> catigorySelectors = [
+            "Online", "Messages", 
+            "Group", "Request"
   ];
+
+  int selectedIndex = 0; 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kprimaryColor,
-
-      height: 100, 
-       
-      child: ListView.builder(
+       height: 100, 
+       color: kprimaryColor,
+       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
+        itemCount: catigorySelectors.length, 
         scrollDirection: Axis.horizontal,
-        itemCount: hederCatigory.length,
-        itemBuilder: (context, index){
-          return GestureDetector(
-            onTap: (){
-              setState(() {
-                  currentIndex = index;
-              });
-            },
-            child: Padding(
-              padding:  const EdgeInsets.symmetric(horizontal: 25, vertical: 35.0),
-              child: Text(
-                hederCatigory[index], style: TextStyle(
-                  color: index == currentIndex? Colors.white: Colors.white60,
-                  fontSize: 25.0, 
-                  letterSpacing: 1.2, 
-                  fontWeight: FontWeight.bold, 
-                ), 
-              ),
-            ),
-          );
-        }
-       )
+        itemBuilder: (context, index) {
+           return Padding(
+             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 35),
+             child: GestureDetector(
+              onTap: (){ 
+                setState(() {
+                   selectedIndex = index;
+                });
+              },
+               child: Text(
+                  catigorySelectors[index], style: TextStyle(fontSize: 28, color: selectedIndex == index? Colors.white: Colors.white54, fontWeight: FontWeight.bold, letterSpacing: 1.2), 
+               ),
+             ),
+           );
+         }
+       ),
     );
   }
 }
